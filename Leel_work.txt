@@ -1,0 +1,15 @@
+    SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+
+        Session session = sessionFactory.openSession();
+
+        session.beginTransaction();
+
+        Customer c002 = session.find(Customer.class, "C002");
+
+        System.out.println(c002);
+
+        session.getTransaction().commit();
+
+        session.close();
+
+        sessionFactory.close();
